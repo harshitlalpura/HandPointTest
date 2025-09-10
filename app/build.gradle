@@ -16,6 +16,17 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
+    packagingOptions {
+        pickFirst '**/*.so'
+        exclude 'META-INF/*'
+        exclude '**/anim/*.xml'
+        exclude '**/layout/*.xml'
+        exclude 'resources.arsc'
+        exclude 'AndroidManifest.xml'
+        exclude '**/animator/*.xml'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -29,6 +40,14 @@ android {
 }
 
 dependencies {
+
+
+    implementation('com.handpoint.api:sdk:7.1010.3-RC.1-SNAPSHOT') {
+        exclude group: "com.android.support"
+        exclude group: "org.json", module: "json"
+    }
+
+
 
     implementation libs.appcompat
     implementation libs.material

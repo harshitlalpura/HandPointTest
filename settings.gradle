@@ -9,6 +9,15 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+        maven {
+            name = "Handpoint Nexus"
+            url = uri("http://nexus.handpoint.ninja:8081/repository/public/") //URL provided by Handpoint once you order a dev kit
+            credentials { //Credentials provided by Handpoint once you order a dev kit
+                username = 'james_bryte'
+                password = 'StPq850ELMx!B5N'
+            }
+            allowInsecureProtocol = true
+        }
     }
 }
 dependencyResolutionManagement {
@@ -16,6 +25,15 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            name = "Handpoint Nexus"
+            url = uri("http://nexus.handpoint.ninja:8081/repository/public/") //URL provided by Handpoint once you order a dev kit
+            credentials { //Credentials provided by Handpoint once you order a dev kit
+                username = 'james_bryte'
+                password = 'StPq850ELMx!B5N'
+            }
+            allowInsecureProtocol = true
+        }
     }
 }
 
