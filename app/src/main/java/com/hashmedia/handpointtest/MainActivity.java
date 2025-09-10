@@ -2,6 +2,7 @@ package com.hashmedia.handpointtest;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements Events.SmartposRe
 
     private Hapi api;
 
-
+    Button btnPay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements Events.SmartposRe
             return insets;
         });
         initApi(this);
+        btnPay = (Button) findViewById(R.id.labeled);
+
+
 
     }
 
@@ -135,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements Events.SmartposRe
         if (statusInfo.getStatus() == StatusInfo.Status.InitialisationComplete) {
             // The StatusInfo object holds the different transaction statuses like reading card, pin entry, etc.
             // Let's launch a payment
-            pay();
+
         }
     }
 
